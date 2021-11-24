@@ -1,0 +1,75 @@
+<mat-card class="cardSign">
+    <mat-card-title>Registrarse</mat-card-title>
+    <mat-card-subtitle>Todos los campos son obligatorios</mat-card-subtitle>
+
+    <form autocomplete="off"
+        [formGroup]="FormReactive"
+        (ngSubmit)="registrarse()" >
+
+        <mat-form-field appearance="outline" class="name">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Nombre" type="text" required formControlName="nombre">
+            <mat-icon matSuffix>person_outline</mat-icon>
+            <mat-error *ngIf="campoValid('nombre')">{{nameMsg}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="name apellido">
+            <mat-label>Apellido</mat-label>
+            <input matInput placeholder="Apellido" type="text" required formControlName="apellido">
+            <mat-icon matSuffix>person_outline</mat-icon>
+            <mat-error *ngIf="campoValid('apellido')">{{apellidoMsg}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="credencial">
+            <mat-label>Correo Electronico</mat-label>
+            <input matInput placeholder="name@example.co" type="email" required formControlName="email">
+            <mat-icon matSuffix>mail_outline</mat-icon>
+            <mat-hint>No compartiremos su correo</mat-hint>
+            <mat-error *ngIf="campoValid('email')">{{emailMsg}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="credencial">
+            <mat-label>Contraseña</mat-label>
+            <input [type]="hide ? 'password' : 'text' " matInput placeholder="Contraseña" required formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="campoValid('password')">La contraseña debe tener minimo 8 caracteres.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="credencial">
+            <mat-label>Confirmar Contraseña</mat-label>
+            <input [type]="hide ? 'password' : 'text' " matInput placeholder="Confirmar Contraseña" required formControlName="passwordv">
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="campoValid('passwordv')">Las contraseñas no coinciden.</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button class="btn" 
+                type="submit"
+                [disabled]="FormReactive.invalid">Registrarse</button>
+        
+
+        <span class="login">¿Ya tienes cuenta? <a href="/auth/login">Iniciar Sesion</a></span>
+
+        
+    </form>
+</mat-card>
+
+<!-- <div class="social-btn">
+    <button mat-button class="google-btn">
+        <fa-icon [icon]="Google"></fa-icon>
+        Registrarse con Google
+    </button>
+
+    <button mat-button class="facebook-btn">
+        <fa-icon [icon]="Facebook"></fa-icon>
+        Registrarse con Facebook
+    </button>
+
+    <button mat-button class="linked-btn">
+        <fa-icon [icon]="LinkedInd"></fa-icon>
+        Registrarse con LinkedIn
+    </button>
+</div> -->

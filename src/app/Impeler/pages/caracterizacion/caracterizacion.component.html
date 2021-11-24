@@ -1,0 +1,113 @@
+<app-toolbar></app-toolbar>
+
+<mat-card class="card-carat">
+    <mat-card-title>Caracterización</mat-card-title>
+    <mat-card-subtitle>Los campos con un * son obligatorios</mat-card-subtitle>
+
+    <hr>
+
+    <form [formGroup]="ReactiveForm"
+            (ngSubmit)="crearNegocio()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Razón Social</mat-label>
+            <input matInput placeholder="Razón Social" type="text"
+                    formControlName="razon_social" required>
+            <mat-icon matSuffix>drive_file_rename_outline</mat-icon>
+            <mat-error *ngIf="campoValid('razon_social')">{{razomMsg}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>NIT</mat-label>
+            <input matInput placeholder="0" type="number"
+                    formControlName='nit' class="example-right-align">
+            <mat-icon matSuffix>numbers</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Forma Juridica</mat-label>
+            <mat-select required formControlName="formajuridica">
+                <mat-option value="">Forma Juridica</mat-option>
+                <mat-option *ngFor="let forma of formaJuridica"
+                            [value]="forma">{{forma}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="campoValid('formajuridica')">Campo obligatorio.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Sector de la Economia</mat-label>
+            <mat-select formControlName="sec_economia" required>
+                <mat-option value="">Sector de la Economia</mat-option>
+                <mat-option *ngFor="let sector of Sector_Economia"
+                            [value]="sector">{{sector | titlecase}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="campoValid('sec_economia')">Campo obligatorio.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Actividad Economica</mat-label>
+            <mat-select formControlName="act_economica" required>
+                <mat-option value="">Actividad Economica</mat-option>
+                <mat-option *ngFor="let actividad of Actividad_Economica"
+                            [value]="actividad.Actividad_Economica">
+                            {{actividad.Actividad_Economica}}
+                </mat-option>
+            </mat-select>
+            <mat-hint *ngIf="MsmActividad"> <strong>Seleccione el sector de la economia</strong> </mat-hint>
+            <mat-error *ngIf="campoValid('act_economica')">Campo obligatorio.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Numero de contacto</mat-label>
+            <input matInput type="number" placeholder="0" class="example-right-align"
+                    formControlName="numero" required>
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="campoValid('numero')">{{numMsg}}</mat-error>
+         </mat-form-field>
+
+        
+
+        <mat-form-field appearance="outline">
+            <mat-label>Departamento</mat-label>
+            <mat-select formControlName="departamento" required>
+                <mat-option value="">Departamento</mat-option>
+                <mat-option *ngFor="let departamento of departamentos"
+                            [value]="departamento">{{departamento}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="campoValid('departamento')">Campo obligatorio.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Ciudad</mat-label>
+            <mat-select formControlName="municipio" required>
+                <mat-option value="">Ciudad</mat-option>
+                <mat-option *ngFor="let municipio of municipios"
+                            [value]="municipio.municipio">{{municipio.municipio}}</mat-option>
+            </mat-select>
+            <mat-hint *ngIf="MsmMunicipio"> <strong>Seleccione el departamento</strong> </mat-hint>
+            <mat-error *ngIf="campoValid('municipio')">Campo obligatorio.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Dirección</mat-label>
+            <input matInput placeholder="Direccion" type="text"
+                    formControlName="direccion">
+            <mat-icon matSuffix>swap_horiz</mat-icon>
+        </mat-form-field>
+
+         <mat-form-field appearance="outline">
+             <mat-label>Fecha de creación</mat-label>
+             <input type="date" matInput formControlName="fecha" required>
+             <mat-icon matSuffix>event</mat-icon>
+             <mat-error *ngIf="campoValid('fecha')">Campo obligatorio.</mat-error>
+         </mat-form-field>
+
+        <button mat-raised-button type="button" 
+                class="btn" [disabled]="ReactiveForm.invalid"
+                type="submit">Guardar</button>
+    </form>
+</mat-card>
+
+<div class="mision">
+    <span>"Convirtiendo Pequeños  Negocios En Empresas"</span>
+</div>

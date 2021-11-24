@@ -1,0 +1,111 @@
+.card-carat{
+    width: 80%;
+    padding: 2em;
+    margin: 2em auto;
+    text-align: center;
+    box-shadow: 0.2em 0.2em 0.15em rgba(0, 0, 0, 0.377);
+}
+
+mat-card-title{
+    margin-bottom: 0.7em;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: #494596;
+}
+
+form{
+    margin: 0.7em auto;
+    text-align: center;
+}
+
+mat-form-field{
+    width: 31.5%;
+    height: auto;
+    margin: 0.5em auto 0 auto;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.btn{
+    display: block;
+    margin: 0.5em auto;
+    background-color: #EA5420;
+    width: 30%;
+    height: auto;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    transition: all 0.4s linear;
+}
+    .btn:hover{
+        background-color: #ca4b20;
+    }
+
+.mision{
+    margin-top: 1em;
+    padding-bottom: 2em;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    color: rgb(80, 80, 80);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 58.75rem){
+    .card-carat{
+        width: 90%;
+    }
+    
+}
+
+@media only screen and (max-width: 46.875rem){
+    mat-form-field{
+        width: 49%;
+    }
+
+    .btn{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 30.9375rem){
+    mat-form-field{
+        width: 100%;
+        padding-left: none;
+        padding-right: none;
+        margin: 0.4 auto 0 auto;
+    }
+
+    .btn{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 26.5rem){
+    
+    mat-card-title{
+        font-size: 1.7em;
+    }
+
+    mat-card-subtitle{
+        font-size: 0.9em;
+    }
+
+    .mision{
+        font-size: 0.9em;
+    }
+
+}
+
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.example-right-align {
+    text-align: right;
+  }

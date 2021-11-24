@@ -1,0 +1,497 @@
+<app-toolbar></app-toolbar>
+
+
+<div class="expandible">
+    <form [formGroup]="ReactiveForm"
+        (ngSubmit)="ValueCampos()">
+
+        
+        <mat-accordion class="example-headers-align">
+
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Clientes
+                </mat-panel-title>
+                <mat-panel-description>
+                    <span></span>
+                  <mat-icon>groups</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <hr>
+
+              <div class="preguntasradio">
+                <label id="pregunta1"> ¿Sabe a que tipo de cliente va dirigido su negocio?  </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta1" color="primary" formControlName="p1">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              
+              <div class="preguntasradio">
+                <label id="pregunta2"> ¿Sabe cuál es el tamaño de su mercado?  </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta2" color="primary" formControlName="p2">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              <div class="preguntasradio">
+                <label id="pregunta3"> ¿Sabe cuáles son las características principales de sus clientes?  </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta3" color="primary" formControlName="p3">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              
+
+              <mat-action-row>
+                <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+          
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Propuesta de valor
+                </mat-panel-title>
+                <mat-panel-description>
+                    <span></span>
+                  <mat-icon>call_made</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+        
+              <hr>
+              
+              <div class="preguntasradio">
+                <label id="pregunta4"> ¿Conoce cuáles son las necesidades, problemas o deseos de sus clientes?  </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta4" color="primary" formControlName="p4">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              <div class="preguntasradio">
+                <label id="pregunta5"> ¿Sabe cuál es la razón o las razones por las qué le compran sus clientes?  </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta5" color="primary" formControlName="p5">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+          
+              <mat-action-row>
+                <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Recursos clave
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <span></span>
+                    <mat-icon>key</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                <hr>
+                
+                <div class="preguntasradio">
+                  <label id="pregunta6"> ¿Sabe cuales son los recursos físicos (instalaciones, oficinas, bodegas, terrenos, maquinaria, equipos y herramientas) que su negocio necesita para que funcione?  </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta6" color="primary" formControlName="p6">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+  
+                <div class="preguntasradio">
+                  <label id="pregunta7"> "¿Los recursos físicos son Propios?" </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta7" color="primary" formControlName="p7">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta8"> "¿Sabe cuáles son los recursos intelectuales (Patentes, registros de marca y procesos o métodos de trabajo) que su negocio necesita para que funcione?"  </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta8" color="primary" formControlName="p8">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+  
+                <div class="preguntasradio">
+                  <label id="pregunta9"> ¿Sabe que recursos humanos (Número de personas, habilidades y conocimientos de los empleados) necesita su egocio para que funcione?  </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta9" color="primary" formControlName="p9">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta10"> ¿Los recursos humanos son propios?  </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta10" color="primary" formControlName="p10">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+  
+                <div class="preguntasradio">
+                  <label id="pregunta11"> ¿Sabe cuál es el recurso financiero que su negocio necesita para que funcione?  </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta11" color="primary" formControlName="p11">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+            
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                  <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Actividades clave
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <span></span>
+                    <mat-icon>settings</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+          
+                <hr>
+
+                <div class="preguntasradio">
+                  <label id="pregunta12"> ¿Sabe cuáles son las actividades clave de su negocio?  </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta12" color="primary" formControlName="p12">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+  
+                <div class="preguntasradio">
+                  <label id="pregunta13"> ¿Conoce que productos o servicios ofrece su negocio? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta13" color="primary" formControlName="p13">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                
+            
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                  <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Fuentes de ingreso
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <span></span>
+                    <mat-icon>money</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                <hr>
+                
+                <div class="preguntasradio">
+                  <label id="pregunta14"> ¿Sabe cuales son las fuentes principales de ingreso de su negocio?  </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta14" color="primary" formControlName="p14">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+  
+                <div class="preguntasradio">
+                  <label id="pregunta15"> ¿Sabe cuál es el método de pago por el cual le preferirían pagar los clientes? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta15" color="primary" formControlName="p15">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta16"> ¿Sabe cuánto aporta cada fuente de ingreso a los ingresos generales? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta16" color="primary" formControlName="p16">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+            
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                  <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Canales de comunicacion - distribucion
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <span></span>
+                    <mat-icon>forum</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                <hr>  
+
+                <div class="preguntasradio">
+                  <label id="pregunta17"> ¿Conoce como se enteran los clientes de sus productos o servicios? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta17" color="primary" formControlName="p17">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta18"> ¿Ofrece a los clientes un servicio de atención posventa? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta18" color="primary" formControlName="p18">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta19"> ¿Les pide a los clientes que evalúen su negocio a través de encuestas, buzón de sugerencias o entrevistas? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta19" color="primary" formControlName="p19">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta20"> ¿Cuenta con canales de distribución para ofrecer sus productos o servicios a los clientes? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta20" color="primary" formControlName="p20">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta21"> ¿Sabe cuál canal de comunicación tiene los mejores resultados? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta21" color="primary" formControlName="p21">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                  <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 6" (opened)="setStep(6)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Relacion con los clientes
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <span></span>
+                    <mat-icon>contact_phone</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                <hr>
+                <div class="preguntasradio">
+                  <label id="pregunta22"> ¿Sabe si tiene alguno de estos tipos de relación con el cliente? (Captación de clientes-Fidelización de clientes- Estimulación de las ventas ,Venta sugestiva) </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta22" color="primary" formControlName="p22">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta23"> ¿Conoce las estrategias por las cuales se acercan a los clientes? (Promociones, descuentos, influencers) </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta23" color="primary" formControlName="p23">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <label id="pregunta24"> ¿Sabe qué tipo de relación esperan los clientes de su negocio? </label>
+                  <br>
+                  <mat-radio-group aria-labelledby="pregunta24" color="primary" formControlName="p24">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+            
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                  <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 7" (opened)="setStep(7)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Asociaciones clave
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <span></span>
+                    <mat-icon>import_export</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                <hr>
+                
+                <div class="preguntasradio">
+                  <br>
+                  <label id="pregunta25"> ¿Conoce cuales son los proveedores clave para su negocio? </label>
+                  <mat-radio-group aria-labelledby="pregunta25" color="primary" formControlName="p25">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <br>
+                  <label id="pregunta26"> ¿Sabe que  alianzas estratégicas posee? </label>
+                  <mat-radio-group aria-labelledby="pregunta26" color="primary" formControlName="p26">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <br>
+                  <label id="pregunta27"> ¿Sabe cuales son los socios que su negocio necesita? </label>
+                  <mat-radio-group aria-labelledby="pregunta27" color="primary" formControlName="p27">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="preguntasradio">
+                  <br>
+                  <label id="pregunta28"> ¿Conoce cuáles son los principales productos o servicios de sus proveedores? </label>
+                  <mat-radio-group aria-labelledby="pregunta28" color="primary" formControlName="p28">
+                    <mat-radio-button value="SI">SI</mat-radio-button>
+                    <mat-radio-button value="NO">NO</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+            
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                  <button mat-button color="primary" (click)="nextStep()" type="button">Siguiente</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+          
+            <mat-expansion-panel [expanded]="step === 8" (opened)="setStep(8)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Estructura de costes
+                </mat-panel-title>
+                <mat-panel-description>
+                    <span></span>
+                  <mat-icon>emoji_transportation</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          
+              <hr>
+              
+              <div class="preguntasradio">
+                
+                <label id="pregunta29"> ¿Tiene calculado los costos de producción u operación? </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta29" color="primary" formControlName="p29">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              <div class="preguntasradio">
+                
+                <label id="pregunta30"> ¿Tiene calculado los costos de comunicación con el cliente? </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta30" color="primary" formControlName="p30">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              <div class="preguntasradio">
+               
+                <label id="pregunta31"> ¿Tiene calculado los costos de las relaciones con el cliente? </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta31" color="primary" formControlName="p31">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              <div class="preguntasradio">
+                <label id="pregunta32"> ¿Tiene calculado los costos de distribución de los productos o servicios? </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta32" color="primary" formControlName="p32">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              <div class="preguntasradio">
+                <label id="pregunta33"> ¿Tiene calculado los costos de promociones o beneficios a los clientes? </label>
+                <br>
+                <mat-radio-group aria-labelledby="pregunta33" color="primary" formControlName="p33">
+                  <mat-radio-button value="SI">SI</mat-radio-button>
+                  <mat-radio-button value="NO">NO</mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+              <mat-action-row>
+                <button mat-button color="warn" (click)="prevStep()" type="button">Anterior</button>
+                <button mat-button color="primary" (click)="nextStep()" type="button">Finalizar</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+          
+          </mat-accordion>
+
+          <button mat-raised-button type="submit" class="btn-send" [disabled]="ReactiveForm.invalid">Enviar respuesta</button>
+
+    </form>
+</div>
+
+
+
+<div class="mision">
+    <span>"Convirtiendo Pequeños  Negocios En Empresas"</span>
+</div>
+    

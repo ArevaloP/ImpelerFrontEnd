@@ -1,0 +1,195 @@
+
+
+.cardSign{
+    width: 50%;
+    height: auto;
+    margin: 2em auto;
+    text-align: center;
+    padding: 2em;
+    box-shadow: 0.2em 0.2em 0.15em rgba(0, 0, 0, 0.377);
+}
+
+mat-card-title{
+    font-size: 2em;
+    font-weight: 600;
+    color: #494596;
+    margin-bottom: 1em;
+}
+
+mat-form-field{
+    display: block;
+    margin: 1em auto 0 auto;
+    width: 80%;
+}
+
+.forgot{
+    float: right;
+    font-size: 1.2em;
+    font-weight: 400;
+    font-style: inherit;
+    color: #494596;
+    margin-top: 0.3em;
+}
+    .forgot a{
+        text-decoration: none;
+        transition: all 0.2s linear;
+    }
+
+    .forgot a:hover{
+        text-decoration: underline;
+        color: #1e1b4d;
+    }
+
+.btn{
+    float: left;
+    background-color: #EA5420;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: auto;
+    transition: all 0.4s linear;
+}
+    .btn:hover{
+        background-color: #ca4b20;
+        
+    }
+
+.divitems{
+    width: 80%;
+    margin: 0 auto;
+    display: inline-table;
+}
+
+.sing{
+    display: block;
+    margin-top: 1.5em;
+    font-size: 1.3em;
+    font-weight: 400;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+    .sing a{
+        text-decoration: none;
+        color: #494596;
+        transition: all 0.2s linear;
+        font-weight: 600;
+    }
+
+        .sing a:hover{
+            text-decoration: underline;
+            color: #1e1b4d;
+        }
+
+
+.social-btn{
+    width: 50%;
+    height: auto;
+    margin: 2em auto;
+    align-items: center;
+    padding-bottom: 2em;
+
+    
+}
+
+
+    .social-btn button{
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5em;
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+
+        .social-btn fa-icon{
+            padding-right: 0.7em;
+        }
+
+        .google-btn{
+            border: #b3b3b3 solid 0.1em;
+            color: #D50F25;
+            background-color: white;
+            transition: all 0.1s linear;
+        }
+    
+        .facebook-btn{
+            border: #b3b3b3 solid 0.1em;
+            color: #3b5998;
+            background-color: white;
+            transition: all 0.1s linear;
+        }
+    
+        .linked-btn{
+            border: #b3b3b3 solid 0.1em;
+            color: #0e76a8;
+            background-color: white;
+            transition: all 0.1s linear;
+        }
+
+
+        .google-btn:hover{
+            background-color: #D50F25;
+            color: #FFF;
+        }
+    
+        .facebook-btn:hover{
+            background-color: #3b5998;
+            color: #FFF;
+        }
+    
+        .linked-btn:hover{
+            background-color: #0e76a8;
+            color: #FFF;
+        }
+
+            
+
+@media only screen and (max-width: 56.25rem){
+    .cardSign{
+        width: 80%;
+    }
+
+    .social-btn{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 34.375rem){
+    .btn{
+        margin: 1em auto 0 auto;
+        width: 80%;
+        float: none;
+    }
+}
+
+
+@media only screen and (max-width: 26.5rem){
+    mat-form-field{
+        width: 100%;
+    }
+
+    .btn{
+        width: 100%;
+    }
+
+    .sing{
+        font-size: 1em;
+    }
+
+    .forgot{
+        font-size: 1em;
+    }
+
+    mat-card-title{
+        font-size: 1.7em;
+    }
+
+    mat-card-subtitle{
+        font-size: 0.9em;
+    }
+
+    .social-btn button{
+        font-size: 1em;
+
+    }
+}
+

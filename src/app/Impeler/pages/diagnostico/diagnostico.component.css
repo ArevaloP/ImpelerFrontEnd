@@ -1,0 +1,110 @@
+
+.expandible{
+    width: 90%;
+    margin: 2em auto 1em auto;
+}
+
+
+
+.mision{
+    margin-top: 1em 1em;
+    padding-bottom: 2em;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    color: rgb(80, 80, 80);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.btn-send{
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0.5em auto 1em auto;
+    background-color: #494596;
+    color: white;
+}
+
+svg{
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+}
+
+@media only screen and (max-width: 38.125rem){
+    .carousel{
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 23.125rem){
+    svg{
+        width: 40%;
+        
+    }
+    
+}
+
+@media only screen and (max-width: 20rem){
+
+    .mision{
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 18.125rem){
+
+    .mision{
+        margin-top: 0.5em;
+    }
+    svg{
+        width: 50%;
+        margin-bottom: 0;
+    }
+    
+
+}
+
+
+
+mat-panel-title{
+    color: #494596;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+mat-expansion-panel-header{
+    height: 5em;
+}
+
+mat-radio-group{
+    display: block;
+    margin: 1em auto;
+}
+
+mat-radio-button{
+    margin-left: 2em;
+}
+
+.preguntasradio{
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}

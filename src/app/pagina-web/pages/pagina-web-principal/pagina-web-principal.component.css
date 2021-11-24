@@ -1,0 +1,391 @@
+.menu-responsive {
+    height: 110px;
+    background: rgb(255, 255, 255);
+}
+
+.inner-width {
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: auto;
+}
+
+header {
+    background: rgb(255, 145, 0);
+}
+
+.logo {
+    float: left;
+    padding: 15px 0;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.menu-toggle-btn {
+    float: right;
+    height: 90px;
+    line-height: 90px !important;
+    color: rgb(255, 168, 6);
+    font-size: 26px;
+    display: none !important;
+    cursor: pointer;
+}
+
+.navigation-menu a:hover {
+    background: rgb(255, 255, 255);
+    color: #2f3640;
+    transform: scale(1.1);
+}
+
+.navigation-menu i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.navigation-menu {
+    float: right;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+}
+
+.navigation-menu a {
+    margin-left: 10px;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    transition: .3s linear;
+    text-decoration: none;
+}
+
+.texto {
+    color: #fff;
+}
+
+.titulo_paguina h1 {
+    margin-top: 90px;
+    color: #fff;
+    font-size: calc(2.359375rem + 2.3125vw);
+}
+
+.texto-parrafo p {
+    color: #fff;
+    font-size: 0.9375rem;
+}
+
+header,
+.container {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.3;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+
+h4 {
+    color: #fff;
+    font-size: calc(1.119375rem + 1.1025vw);
+    padding: 40px;
+    line-height: 1.3;
+}
+
+.texto-1 h4 {
+    padding: 50px;
+    color: #fff;
+}
+
+
+.texttitulo {
+    margin-top: 50px;
+    font-size: calc(1.009375rem + 1.0025vw);
+    color: #fff;
+}
+
+.texttitulo:hover {
+    color: black;
+}
+
+
+
+.textoo h2 {
+    color: blue;
+}
+
+.texto-2 h2 {
+    font-size: calc(1.129375rem + 1.1125vw);
+}
+
+.texto-2 p {
+    font-size: 1.8375rem;
+}
+
+.texto-sh h2 {
+    margin-top: 150px;
+    color: rgb(69, 49, 245);
+}
+
+
+.sombra {
+    -webkit-box-shadow: 0px 2px 25px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 25px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 25px -1px rgba(0, 0, 0, 0.75);
+}
+
+.sombra1 {
+    -webkit-box-shadow: 0px 2px 25px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 25px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 25px -1px rgba(0, 0, 0, 0.75);
+}
+
+
+.ig {
+    margin-top: 70px;
+}
+
+
+
+
+
+
+.fondo {
+    height: 950px;
+    background: rgb(255, 145, 0);
+}
+
+.redes {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    background-image: url(../../../../assets/img/fondo.jpg);
+}
+
+.nav {
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(85, 85, 85);
+    margin-top: 5px;
+    font-size: 0.8375rem;
+    float: right;
+}
+
+.nav_2 {
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(85, 85, 85);
+    margin-top: 5px;
+    font-size: 0.8375rem;
+}
+
+
+
+
+
+hr {
+    color: rgb(133, 128, 128);
+}
+
+.image {
+    color: #0abde3;
+}
+
+
+.home {
+    color: #ff6b6b;
+}
+
+.about {
+    color: #7733ff;
+    font-size: 30px;
+}
+
+.works {
+    color: #7733ff;
+    font-size: 30px;
+}
+
+.team {
+    font-size: 30px;
+    color: #7733ff;
+}
+
+.contact {
+    color: #1dd1a1;
+}
+
+
+
+
+
+.bussisnes {
+    background-image: url(../../../../assets/img/bg-6.png);
+}
+
+@media screen and (max-width:700px) {
+    .menu-toggle-btn {
+        display: block !important;
+    }
+    .navigation-menu {
+        position: fixed;
+        width: 100%;
+        max-width: 400px;
+        background: #ffffff98;
+        top: 90px;
+        right: 0;
+        display: none;
+        padding: 20px 40px;
+        box-sizing: border-box;
+    }
+    .navigation-menu::before {
+        content: "";
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #ffffff98;
+        position: absolute;
+        top: -10px;
+        right: 10px;
+    }
+    .navigation-menu a {
+        display: block;
+        margin: 10px 0;
+    }
+    .navigation-menu.active {
+        display: block;
+    }
+}
+
+.sm a {
+    margin: 0 20px;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 6px 6px 12px rgb(0, 0, 0), -6px -6px 12px rgb(255, 255, 255, .1);
+    overflow: hidden;
+    font-size: 28px;
+    transition: .3s linear;
+    position: relative;
+}
+
+.text-comunicacion h5 {
+    margin-top: 10px;
+    color: rgb(82, 53, 248);
+}
+
+.sm {
+    height: 700px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.sm a:hover {
+    transform: scale(1.3);
+    border-radius: 50%;
+}
+
+a:hover {
+    transform: scale(1.3);
+    border-radius: 50%;
+}
+
+a i::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-image: #F7971E;
+    background-size: 200% 200%;
+    background-position: 75% 75%;
+    line-height: 80px;
+    top: 0;
+    left: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background .5s linear;
+}
+.container-per{
+    background-color: #FFF;
+    width: 100%;
+    padding: 0 10rem;
+}
+
+.sm a:hover i::before {
+    background-position: 0% 0%;
+}
+
+.sm a i fa-icon{
+    color: #4F4FF3;
+    position: absolute;
+    margin-top: 0.8em;
+    margin-left: 1.7rem;
+}
+
+
+
+.sm a i .facebook:hover{
+    color: blue;
+}
+
+.sm a i .facebook{
+    transition: .8s linear;
+}
+
+.sm a i .instagram:hover{
+    color: rgb(255, 0, 242);
+}
+
+.sm a i .instagram{
+    transition: .8s linear;
+}
+
+.sm a i .linkedin:hover{
+    color: rgb(0, 132, 255);
+}
+
+.sm a i .linkedin{
+    transition: .8s linear;
+}
+
+
+.sm a i .youtube:hover{
+    color: rgb(255, 0, 0);
+}
+.sm a i .youtube{
+    transition: .8s linear;
+}
+
+.comunicate{
+    font-size: 1.6em;
+}
+
+.redes{
+    background-color: #FFF;
+    padding-top: 6rem;
+}
+
+.titulovalor{
+    font-size: 2.3em;
+    color: #FFF;
+}
+
+.textovalor{
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+.tituloimpeler{
+    font-size: 2.5em;
+}
+
+.parrafoimpeler{
+    font-size: 1.2em;
+}
+
+.buttonimpeler{
+    font-size: 0.5em;
+}

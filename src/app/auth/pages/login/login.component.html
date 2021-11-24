@@ -1,0 +1,91 @@
+<mat-card class="cardSign">
+    <mat-card-title>Iniciar Sesion</mat-card-title>
+    <mat-card-subtitle>Ingresa tu usuario contraseña para ingresar</mat-card-subtitle>
+
+    <form   autocomplete="off"
+            [formGroup]="FormReactive"
+            (ngSubmit)="login()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Correo Electronico</mat-label>
+            <input matInput placeholder="name@example.co" type="email" formControlName="email">
+            <mat-icon matSuffix>mail_outline</mat-icon>
+            <mat-error *ngIf="campoValid('email')">{{emailMsg}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input [type]="hide ? 'password' : 'text' " matInput placeholder="Contraseña" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="campoValid('password')">Recuerda que la contraseña debe tener mínimo 8 caracteres.</mat-error>
+        </mat-form-field>
+
+        <div class="divitems">
+            <span class="forgot"><a type="button" data-bs-toggle="modal" data-bs-target="#modalForgot">Olvidé mi contraseña</a></span>
+            <button mat-raised-button class="btn"
+                    type="submit" [disabled]="FormReactive.invalid">Iniciar sesion</button>
+
+                    <div class="modal fade" id="modalForgot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title" id="exampleModalLabel">Restablecer Contraseña</h2>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form autocomplete="off"
+                                        [formGroup]="FormReactiveForgot"
+                                        (ngSubmit)="sendForgotPassword()">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Correo Electronico</mat-label>
+                                        <input matInput placeholder="name@example.co" type="email" formControlName="emailForgot">
+                                        <mat-icon matSuffix>mail_outline</mat-icon>
+                                        <mat-error *ngIf="campoValid('emailForgot')">{{emailForgot}}</mat-error>
+                                    </mat-form-field>
+
+                                    <button mat-raised-button
+                                            type="submit" color="primary"
+                                            [disabled]="FormReactiveForgot.invalid">Enviar Correo</button>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <p>"Convirtiendo pequeños negocios en empresas"</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        </div>
+
+        <span class="sing">¿No tienes cuenta? <a href="auth/register">Registrarse</a></span>
+
+        
+    </form>
+</mat-card>
+
+<div class="social-btn">
+    <button mat-button class="google-btn" (click)="loginGoogle()">
+        <fa-icon [icon]="Google"></fa-icon>
+        Iniciar con Google
+    </button>
+
+    <button mat-button class="facebook-btn" (click)="loginFacebook()">
+        <fa-icon [icon]="Facebook"></fa-icon>
+        Iniciar con Facebook
+    </button>
+
+    <!-- <button mat-button class="linked-btn" (click)="loginTwitter()">
+        <fa-icon [icon]="LinkedInd"></fa-icon>
+        Iniciar con LinkedIn
+    </button> -->
+</div>
+
+
+
+
+
+
+
+
